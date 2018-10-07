@@ -1,4 +1,4 @@
-package Lambdas;
+package Java8.Lambdas;
 
 /**
  * @author MikeW

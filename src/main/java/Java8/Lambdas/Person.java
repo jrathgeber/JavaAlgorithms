@@ -1,4 +1,4 @@
-package Lambdas;
+package Java8.Lambdas;
 
 import java.util.ArrayList;
 import java.util.List;
