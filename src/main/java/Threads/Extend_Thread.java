@@ -11,6 +11,8 @@ package Threads;
  */
 class Worker extends Thread {
 
+    private static Deadlock dd  = new Deadlock();
+
     @Override
     public void run() {
         
@@ -18,7 +20,10 @@ class Worker extends Thread {
         
         for(int i=0; i<10; i++) {
             System.out.println(i + " looping ...");
-            
+
+            dd.leftRight();
+
+
             // Sleep for a while
             try {
                 Thread.sleep(200);
@@ -29,6 +34,9 @@ class Worker extends Thread {
                 // from the Thread class.
                 break;
             }
+
+            dd.rightLeft();
+
         }
     }
 
