@@ -38,19 +38,7 @@ public class Deadlock {
         
          System.out.println("Right");
     }
-    
-    
-    
-    public static void main(String... args) {
-        
-        
-        Deadlock dl = new Deadlock();
-        
-        dl.leftRight();
-        dl.rightLeft();
-        
-        
-    }
-    
+
+
     
 }
