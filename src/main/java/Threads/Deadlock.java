@@ -1,44 +1,56 @@
 package Threads;
 
-/**
- * LeftRightDeadlock
- *
- * Simple lock-ordering deadlock
- *
- * @author Brian Goetz and Tim Peierls
- */
+
 public class Deadlock {
-    
-    private final Object left = new Object();
-    private final Object right = new Object();
 
-    public void leftRight() {
-        synchronized (left) {
-            synchronized (right) {
-                doSomething();
+    private static final Object lockA = new Object();
+    private static final Object lockB = new Object();
+
+    public static void main(String[] args) {
+
+        Thread threadA = new Thread(getRunnableA(), "Thread A");
+        Thread threadB = new Thread(getRunnableB(), "Thread B");
+
+        threadA.start();
+        threadB.start();
+
+    }
+
+    private static Runnable getRunnableB() {
+
+        return new Runnable() {
+            public void run() {
+                synchronized(lockA) {
+                    try {
+                        Thread.sleep(500);
+                    }
+                    catch(InterruptedException e) { }
+                    synchronized(lockB) {
+                        System.out.println("Retrieved lock B and lock A");
+                    }
+                }
             }
-        }
+        };
+
     }
 
-    public void rightLeft() {
-        synchronized (right) {
-            synchronized (left) {
-                doSomethingElse();
+    private static Runnable getRunnableA() {
+
+        return new Runnable() {
+
+            public void run() {
+                synchronized(lockB) {
+                    try {
+                        Thread.sleep(500);
+                    }
+                    catch(InterruptedException e) { }
+
+                    synchronized(lockA) {
+                        System.out.println("Retrieved lock A and lock B");
+                    }
+                }
             }
-        }
+        };
+
     }
-
-    void doSomething() {
-        
-        System.out.println("Left");
-        
-    }
-
-    void doSomethingElse() {
-        
-         System.out.println("Right");
-    }
-
-
-    
 }

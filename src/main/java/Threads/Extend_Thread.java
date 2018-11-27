@@ -21,7 +21,7 @@ class Worker extends Thread {
         for(int i=0; i<10; i++) {
             System.out.println(i + " looping ...");
 
-            dd.leftRight();
+            //dd.leftRight();
 
 
             // Sleep for a while
@@ -35,7 +35,7 @@ class Worker extends Thread {
                 break;
             }
 
-            dd.rightLeft();
+            //dd.rightLeft();
 
         }
     }
