@@ -8,6 +8,7 @@ package Algorithms.Copying;
 /**
  *
  * @author jrathgeber
+ *
  */
 public final class Galaxy {
 
