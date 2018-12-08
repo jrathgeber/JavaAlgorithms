@@ -5,6 +5,9 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Shuffle {
 
+    // More intuitive random
+    private static Random random;
+
     /*
      * from : https://stackoverflow.com/questions/1519736/random-shuffling-of-an-array
      *
