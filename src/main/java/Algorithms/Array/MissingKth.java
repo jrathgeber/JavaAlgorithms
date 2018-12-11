@@ -1,6 +1,7 @@
 package Algorithms.Array;
 
 import java.util.Arrays;
+import java.util.PriorityQueue;
 
 public class MissingKth {
 
@@ -11,9 +12,8 @@ public class MissingKth {
     }
 
 
-    /*
 
-    public int findKthLargest2(int[] nums, int k) {
+    static int findKthLargest2(int[] nums, int k) {
         PriorityQueue<Integer> q = new PriorityQueue<Integer>(k);
         for(int i: nums){
             q.offer(i);
@@ -27,14 +27,14 @@ public class MissingKth {
     }
 
 
-    */
+
 
     /* program to test above function */
     public static void main(String args[])
     {
         int a[] = {1,2,4,5,6};
         int larg = findKthLargest1(a,2);
-        int larg2 = findKthLargest1(a,2);
+        int larg2 = findKthLargest2(a,2);
         System.out.println("Missing is : [" + larg + "] [" + larg2 + "]");
 
         assert larg == larg2 : " Problem ";
