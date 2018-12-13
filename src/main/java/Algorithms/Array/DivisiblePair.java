@@ -29,8 +29,13 @@ public class DivisiblePair
             if (!hm.containsKey(rem))
             {
                 hm.put(rem, 0);
+                System.out.println("Hm put : [" + rem + "] , 0");
+
             }
+            // Key count goes in HM
             hm.put(rem, hm.get(rem) + 1);
+            System.out.println("Hm put : [" + rem + "] , " + hm.get(rem));
+
         }
 
         // Traverse input array and use freq[] to decide
@@ -75,8 +80,10 @@ public class DivisiblePair
     // Driver program to test above functions
     public static void main(String[] args)
     {
-        int arr[] = { 92, 75, 65, 48, 45, 35 };
-        int k = 9;
+        int arr[] = { 12, 30, 20, 22 };
+        //int arr[] = { 92, 75, 65, 48, 45, 35 };
+        int k = 6;
+
         boolean ans = canPairs(arr, k);
         if (ans)
             System.out.println("True");
