@@ -3,7 +3,7 @@ Various Java Examples
 
 Algorithims and Data Structures
 
-Job Interview Prep
+Design Patterns
 
 Leet Codes
 
