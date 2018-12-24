@@ -1,5 +1,10 @@
-package Algorithms.String;
+package Algorithms.Pallindromes;
+/*
+    Leet 680. Valid Palindrome II
 
+    Given a non-empty string s, you may delete at most one character. Judge whether you can make it a palindrome.
+
+ */
 public class Valid2 {
 
     /*
@@ -13,7 +18,7 @@ public class Valid2 {
 
     public static void main(String... args) {
 
-        Algorithms.String.Valid2 a = new Algorithms.String.Valid2();
+        Valid2 a = new Valid2();
 
         boolean test1 = a.validPalindrome("abca");
         boolean expected1 = true;

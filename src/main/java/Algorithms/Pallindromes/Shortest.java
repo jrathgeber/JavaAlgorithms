@@ -1,14 +1,22 @@
 package Algorithms.Pallindromes;
-
-
 /*
+    214. Shortest Palindrome
 
-    Leet 647. Palindromic Substrings
+    Given a string s, you are allowed to convert it to a palindrome by adding characters in front of it.
+    Find and return the shortest palindrome you can find by performing this transformation.
 
-    Given a string, your task is to count how many palindromic substrings in this string.
-
-    The substrings with different start indexes or end indexes are counted as different substrings even they consist of same characters.
  */
-
 public class Shortest {
+
+    public static void main(String... args) {
+
+        Closest a = new Closest();
+
+        String test1 = a.nearestPalindromic("123");
+        String expected1 = "121";
+        System.out.println(" Out [" + test1 + "] expected + [" + test1 + "]" );
+        assert test1 == expected1 : "Error";
+
+    }
+
 }
