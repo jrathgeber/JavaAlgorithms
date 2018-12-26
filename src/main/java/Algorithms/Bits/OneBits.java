@@ -1,5 +1,10 @@
 package Algorithms.Bits;
+/*
+    191. Number of 1 Bits
 
+    Write a function that takes an unsigned integer and return the number of '1' bits it has (also known as the Hamming weight).
+
+ */
 public class OneBits {
 
     public static void main(String... args) {
@@ -8,7 +13,7 @@ public class OneBits {
 
         int test1 = a.hammingWeight(00000000000000000000000000001011);
         int expected1 = 3;
-        System.out.println(" Out [" + test1 + "] expected + [" + test1 + "]" );
+        System.out.println(" Out [" + test1 + "] expected + [" + expected1 + "]" );
         assert test1 == expected1 : "Error";
     }
 
