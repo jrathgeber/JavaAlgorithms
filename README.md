@@ -1,7 +1,7 @@
 # JavaAlgorithms
 Various Java Examples
 
-Algorithims and Data Structures
+Algorithms and Data Structures
 
 Design Patterns
 
