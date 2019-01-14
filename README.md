@@ -1,4 +1,5 @@
-# JavaAlgorithms
+# JavaAlgorithms ![alt tag](https://api.travis-ci.org/jrathgeber/javaalgorithms.svg?branch=master)
+
 Various Java Examples
 
 Algorithms and Data Structures
