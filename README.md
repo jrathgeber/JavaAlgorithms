@@ -1,4 +1,5 @@
-# JavaAlgorithms ![alt tag](https://api.travis-ci.org/jrathgeber/javaalgorithms.svg?branch=master)
+# JavaAlgorithms ![alt tag](https://travis-ci.org/jrathgeber/JavaAlgorithms.svg?branch=master)
+
 
 Various Java Examples
 
