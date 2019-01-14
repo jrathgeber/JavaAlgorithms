@@ -20,7 +20,7 @@ Leet Codes
 - [Streams](#Streams)
 - [Structures](#Structures)
 - [Testing](#Testing)
-- [Threads] (#Threads)
+- [Threads](#Threads)
 
 
 ## Algorithms
