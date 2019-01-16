@@ -11,6 +11,7 @@ Leet Codes
 
 ## Table of Contents
 - [Algorithms](#Algorithms)
+  - [Array](#Array)
 - [Collections](#Collections)
 - [Copying](#Copying)
 - [GC](#GC)
@@ -24,6 +25,7 @@ Leet Codes
 
 
 ## Algorithms
+### Array
 * [Atoi](/src/main/java/Algorithms/Array/Atoi.java)
 * [BinarySearch](/src/main/java/Algorithms/Array/BinarySearch.java)
 * [DivisiblePair](/src/main/java/Algorithms/Array/DivisiblePair.java)
