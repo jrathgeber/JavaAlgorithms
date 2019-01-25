@@ -46,19 +46,25 @@ Leet Codes
 * [RemoveDupes](/src/main/java/Algorithms/Array/RemoveDupes.java)
 * [Reverse](/src/main/java/Algorithms/Array/Reverse.java)
 * [Shuffle](/src/main/java/Algorithms/Array/Shuffle.java)
+### Bits
 * [OneBits](/src/main/java/Algorithms/Bits/OneBits.java)
 * [OneTwoBits](/src/main/java/Algorithms/Bits/OneTwoBits.java)
+### Copying
 * [Galaxy](/src/main/java/Algorithms/Copying/Galaxy.java)
+### Dynamic
 * [Fib](/src/main/java/Algorithms/Dynamic/Fib.java)
 * [Ugly](/src/main/java/Algorithms/Dynamic/Ugly.java)
+### Graph
 * [DemoGraph](/src/main/java/Algorithms/Graph/DemoGraph.java)
 * [Edge](/src/main/java/Algorithms/Graph/Edge.java)
 * [Graph](/src/main/java/Algorithms/Graph/Graph.java)
 * [Vertex](/src/main/java/Algorithms/Graph/Vertex.java)
+### Misc
 * [BracketChecker](/src/main/java/Algorithms/Misc/BracketChecker.java)
 * [Roman](/src/main/java/Algorithms/Misc/Roman.java)
 * [Square](/src/main/java/Algorithms/Misc/Square.java)
 * [Test](/src/main/java/Algorithms/Misc/Test.java)
+### Pallindromes
 * [Closest](/src/main/java/Algorithms/Pallindromes/Closest.java)
 * [Count](/src/main/java/Algorithms/Pallindromes/Count.java)
 * [Largest](/src/main/java/Algorithms/Pallindromes/Largest.java)
@@ -78,7 +84,9 @@ Leet Codes
 * [Super](/src/main/java/Algorithms/Pallindromes/Super.java)
 * [Valid](/src/main/java/Algorithms/Pallindromes/Valid.java)
 * [Valid2](/src/main/java/Algorithms/Pallindromes/Valid2.java)
+### Recursion
 * [Recursion](/src/main/java/Algorithms/Recursion/Recursion.java)
+### Trees
 * [BinarySearchTree](/src/main/java/Algorithms/Trees/BinarySearchTree.java)
 
 ## Collections
