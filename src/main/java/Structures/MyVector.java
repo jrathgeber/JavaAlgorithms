@@ -1,19 +1,18 @@
 package Structures;
 
-
 /******************************************************************************
- *  Compilation:  javac Vector.java
- *  Execution:    java Vector
+ *  Compilation:  javac MyMyVector.java
+ *  Execution:    java MyMyVector
  *
- *  Implementation of a vector of real numbers.
+ *  Implementation of a MyMyVector of real numbers.
  *
  *  This class is implemented to be immutable: once the client program
- *  initialize a Vector, it cannot change any of its fields
+ *  initialize a MyMyVector, it cannot change any of its fields
  *  (N or data[i]) either directly or indirectly. Immutability is a
  *  very desirable feature of a data type.
  *
  *
- *  % java Vector
+ *  % java MyMyVector
  *  x        =  (1.0, 2.0, 3.0, 4.0)
  *  y        =  (5.0, 2.0, 4.0, 1.0)
  *  x + y    =  (6.0, 4.0, 7.0, 5.0)
@@ -22,23 +21,25 @@ package Structures;
  *  <x, y>   =  25.0
  *  |x - y|  =  5.0990195135927845
  *
- *  Note that java.util.Vector is an unrelated Java library class.
+ *  Note that java.util.MyMyVector is an unrelated Java library class.
+ *
+ *  Taken from : https://introcs.cs.princeton.edu/java/33design/MyMyVector.java.html
  *
  ******************************************************************************/
 
 public class MyVector {
 
-    private final int n;         // length of the vector
-    private double[] data;       // array of vector's components
+    private final int n;         // length of the MyVector
+    private double[] data;       // array of MyVector's components
 
-    // create the zero vector of length n
-    public Vector(int n) {
+    // create the zero MyVector of length n
+    public MyVector(int n) {
         this.n = n;
         this.data = new double[n];
     }
 
-    // create a vector from an array
-    public Vector(double[] data) {
+    // create a MyVector from an array
+    public MyVector(double[] data) {
         n = data.length;
 
         // defensive copy so that client can't alter our copy of data[]
@@ -47,13 +48,13 @@ public class MyVector {
             this.data[i] = data[i];
     }
 
-    // create a vector from either an array or a vararg list
+    // create a MyVector from either an array or a vararg list
     // this constructor uses Java's vararg syntax to support
     // a constructor that takes a variable number of arguments, such as
-    // Vector x = new Vector(1.0, 2.0, 3.0, 4.0);
-    // Vector y = new Vector(5.0, 2.0, 4.0, 1.0);
+    // MyVector x = new MyVector(1.0, 2.0, 3.0, 4.0);
+    // MyVector y = new MyVector(5.0, 2.0, 4.0, 1.0);
 /*
-    public Vector(double... data) {
+    public MyVector(double... data) {
         n = data.length;
 
         // defensive copy so that client can't alter our copy of data[]
@@ -62,13 +63,13 @@ public class MyVector {
             this.data[i] = data[i];
     }
 */
-    // return the length of the vector
+    // return the length of the MyVector
     public int length() {
         return n;
     }
 
-    // return the inner product of this Vector a and b
-    public double dot(Vector that) {
+    // return the inner product of this MyVector a and b
+    public double dot(MyVector that) {
         if (this.length() != that.length())
             throw new IllegalArgumentException("dimensions disagree");
         double sum = 0.0;
@@ -77,33 +78,33 @@ public class MyVector {
         return sum;
     }
 
-    // return the Euclidean norm of this Vector
+    // return the Euclidean norm of this MyVector
     public double magnitude() {
         return Math.sqrt(this.dot(this));
     }
 
     // return the Euclidean distance between this and that
-    public double distanceTo(Vector that) {
+    public double distanceTo(MyVector that) {
         if (this.length() != that.length())
             throw new IllegalArgumentException("dimensions disagree");
         return this.minus(that).magnitude();
     }
 
     // return this + that
-    public Vector plus(Vector that) {
+    public MyVector plus(MyVector that) {
         if (this.length() != that.length())
             throw new IllegalArgumentException("dimensions disagree");
-        Vector c = new Vector(n);
+        MyVector c = new MyVector(n);
         for (int i = 0; i < n; i++)
             c.data[i] = this.data[i] + that.data[i];
         return c;
     }
 
     // return this - that
-    public Vector minus(Vector that) {
+    public MyVector minus(MyVector that) {
         if (this.length() != that.length())
             throw new IllegalArgumentException("dimensions disagree");
-        Vector c = new Vector(n);
+        MyVector c = new MyVector(n);
         for (int i = 0; i < n; i++)
             c.data[i] = this.data[i] - that.data[i];
         return c;
@@ -116,30 +117,30 @@ public class MyVector {
 
     // create and return a new object whose value is (this * factor)
     @Deprecated
-    public Vector times(double factor) {
-        Vector c = new Vector(n);
+    public MyVector times(double factor) {
+        MyVector c = new MyVector(n);
         for (int i = 0; i < n; i++)
             c.data[i] = factor * data[i];
         return c;
     }
 
     // create and return a new object whose value is (this * factor)
-    public Vector scale(double factor) {
-        Vector c = new Vector(n);
+    public MyVector scale(double factor) {
+        MyVector c = new MyVector(n);
         for (int i = 0; i < n; i++)
             c.data[i] = factor * data[i];
         return c;
     }
 
 
-    // return the corresponding unit vector
-    public Vector direction() {
+    // return the corresponding unit MyVector
+    public MyVector direction() {
         if (this.magnitude() == 0.0)
-            throw new ArithmeticException("zero-vector has no direction");
+            throw new ArithmeticException("zero-MyVector has no direction");
         return this.scale(1.0 / this.magnitude());
     }
 
-    // return a string representation of the vector
+    // return a string representation of the MyVector
     public String toString() {
         StringBuilder s = new StringBuilder();
         s.append('(');
@@ -157,16 +158,16 @@ public class MyVector {
         double[] xdata = { 1.0, 2.0, 3.0, 4.0 };
         double[] ydata = { 5.0, 2.0, 4.0, 1.0 };
 
-        Vector x = new Vector(xdata);
-        Vector y = new Vector(ydata);
+        MyVector x = new MyVector(xdata);
+        MyVector y = new MyVector(ydata);
 
-        StdOut.println("x        =  " + x);
-        StdOut.println("y        =  " + y);
-        StdOut.println("x + y    =  " + x.plus(y));
-        StdOut.println("10x      =  " + x.scale(10.0));
-        StdOut.println("|x|      =  " + x.magnitude());
-        StdOut.println("<x, y>   =  " + x.dot(y));
-        StdOut.println("|x - y|  =  " + x.minus(y).magnitude());
+        System.out.println("x        =  " + x);
+        System.out.println("y        =  " + y);
+        System.out.println("x + y    =  " + x.plus(y));
+        System.out.println("10x      =  " + x.scale(10.0));
+        System.out.println("|x|      =  " + x.magnitude());
+        System.out.println("<x, y>   =  " + x.dot(y));
+        System.out.println("|x - y|  =  " + x.minus(y).magnitude());
     }
 }
 
