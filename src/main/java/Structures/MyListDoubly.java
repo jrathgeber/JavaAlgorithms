@@ -52,12 +52,12 @@ class DoublyNode<NodeType>  implements Comparable<NodeType> {
 }
 
 
-public class LinkedListDoubly<NodeType> {
+public class MyListDoubly<NodeType> {
 
     private DoublyNode<NodeType> root;
     private int count;
 
-    public LinkedListDoubly() {
+    public MyListDoubly() {
         root = null;
         count = 0;
     }
@@ -66,8 +66,7 @@ public class LinkedListDoubly<NodeType> {
         return count;
     }
 
-    public void addAt(DoublyNode<NodeType> node,
-                      int position) {
+    public void addAt(DoublyNode<NodeType> node, int position) {
 
         if (root == null) {
             node.setNext(node);
@@ -142,7 +141,7 @@ public class LinkedListDoubly<NodeType> {
     }
 
     public static void main(String[] args) {
-        LinkedListDoubly<Integer> llist = new LinkedListDoubly<>();
+        MyListDoubly<Integer> llist = new MyListDoubly<>();
         llist.addAt(new DoublyNode<Integer>(11), 0);
         llist.addAt(new DoublyNode<Integer>(22), -3321);
         llist.addAt(new DoublyNode<Integer>(33), 2);
