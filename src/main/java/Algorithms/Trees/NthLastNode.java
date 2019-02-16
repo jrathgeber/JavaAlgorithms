@@ -32,12 +32,19 @@ class NthLastNode
         int len = 0;
         Node temp = head;
 
+        System.out.println("head : [" + head.data + "] ");
+
+
         // 1) count the number of nodes in Linked List
         while (temp != null)
         {
             temp = temp.next;
             len++;
         }
+
+        System.out.println("Length : [" + len + "] [" + n + "]");
+
+        //System.out.println("Temp : [" + temp.data + "]");
 
         // check if value of n is not more than length of
         // the linked list
@@ -46,12 +53,17 @@ class NthLastNode
 
         temp = head;
 
+        System.out.println("Temp : [" + head.data + "]");
+        System.out.println("Temp : [" + temp.data + "]");
+
         // 2) get the (len-n+1)th node from the begining
-        for (int i = 1; i < len-n+1; i++)
+        for (int i = 1; i < len-n+1; i++) {
+            System.out.println(temp.data);
             temp = temp.next;
 
+        }
         System.out.println(temp.data);
-    }
+        }
 
     /* Inserts a new Node at front of the list. */
     public void push(int new_data)
@@ -74,7 +86,10 @@ class NthLastNode
         llist.push(4);
         llist.push(15);
         llist.push(35);
+        llist.push(7);
+        llist.push(11);
+        llist.push(234);
 
-        llist.printNthFromLast(4);
+        llist.printNthFromLast(2);
     }
 }// This
