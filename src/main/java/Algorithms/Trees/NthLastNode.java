@@ -44,8 +44,6 @@ class NthLastNode
 
         System.out.println("Length : [" + len + "] [" + n + "]");
 
-        //System.out.println("Temp : [" + temp.data + "]");
-
         // check if value of n is not more than length of
         // the linked list
         if (len < n)
