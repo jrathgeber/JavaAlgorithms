@@ -2,27 +2,29 @@ package Structures;
 
 /*
  * Hash Map from : https://dzone.com/articles/custom-hashmap-implementation-in-java
- */
-
+ *
+*/
 
 /*
- * Easy Entry
+ * Hash map entry object
  */
 class Entry<K, V> {
 
-    // Members
+    // Members. A key and a value
     final K key;
     V value;
+
+    // Entry is a linked list becuase of !
     Entry<K, V> next;
 
-    // Contrauctoe
+    // Constructor and pointer to next. Null first one ?
     public Entry(K key, V value, Entry<K, V> next) {
         this.key = key;
         this.value = value;
         this.next = next;
     }
 
-    // getters, equals, hashCode and toString
+    // Getters, equals, hashCode and toString
     public K getKey() {
         return key;
     }
@@ -39,15 +41,20 @@ class Entry<K, V> {
         return next;
     }
 
-
 }
 
 
 public class MyMap<K, V> {
 
+    // Array of Entry objects is a Hash Map
     private Entry<K, V>[] buckets;
+
+    // Initial capacity
     private static final int INITIAL_CAPACITY = 1 << 4; // 16
+
+    // What dis ? How many r in it I think
     private int size = 0;
+
     public MyMap() {
         this(INITIAL_CAPACITY);
     }
@@ -59,14 +66,17 @@ public class MyMap<K, V> {
     public void put(K key, V value) {
 
         Entry<K, V> entry = new Entry<>(key, value, null);
+
+        // Bucket is Hash of key MODULUS bucket size
         int bucket = getHash(key) % getBucketSize();
+
         Entry<K, V> existing = buckets[bucket];
         if (existing == null) {
             buckets[bucket] = entry;
             size++;
         } else {
-            // compare the keys see if key already exists
 
+            // compare the keys see if key already exists
             while (existing.next != null) {
                 if (existing.key.equals(key)) {
                     existing.value = value;
@@ -98,6 +108,7 @@ public class MyMap<K, V> {
      */
     public V get(K key) {
 
+        // Nice !
         Entry<K, V> bucket = buckets[getHash(key) % getBucketSize()];
         while (bucket != null) {
 
@@ -112,17 +123,16 @@ public class MyMap<K, V> {
 
     public static void main(String ...args) {
 
-
             MyMap<String, String> myMap = new MyMap<>();
             myMap.put("USA", "Washington DC");
             myMap.put("Nepal", "Kathmandu");
             myMap.put("India", "New Delhi");
             myMap.put("Australia", "Sydney");
 
-            //assertNotNull(myMap);
-            //assertEquals(4, myMap.size());
-            //assertEquals("Kathmandu", myMap.get("Nepal"));
-            //assertEquals("Sydney", myMap.get("Australia"));
+            String helloMap = myMap.get("USA");
+
+            System.out.println("I am in [" + helloMap + "]");
+
 
     }
 }

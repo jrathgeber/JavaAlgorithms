@@ -9,13 +9,13 @@ package Structures;
 
  */
 
-// singly list
-class SinglyNode {
+// The usual Node
+class ListNode {
 
-    SinglyNode next;
+    ListNode next;
     String data;
 
-    public SinglyNode(String data) {
+    public ListNode(String data) {
         this.data = data;
     }
 
@@ -23,43 +23,45 @@ class SinglyNode {
 
 public class MyList {
 
-    SinglyNode head;
+    // The whole list is right here!
+    ListNode head;
 
+    // Adds a new not to the begining
     public void addToHead(String data) {
-        SinglyNode newNode = new SinglyNode(data);
+        ListNode newNode = new ListNode(data);
         newNode.next = head;
         head = newNode;
     }
 
+    // Add to tail
     public void addToTail(String data) {
-        SinglyNode newNode = new SinglyNode(data);
-        SinglyNode current = head;
+        ListNode newNode = new ListNode(data);
+        ListNode current = head;
         while (current.next != null){
             current = current.next;
         }
         current.next = newNode;
-        //newNode.next = null;
     }
 
+    // Nicely
     public void insertAfter(String prevData, String newData) {
-        SinglyNode current = head;
-
+        ListNode current = head;
         // traverse through list
         while(current != null && !current.data.equals(prevData)) {
             current = current.next;
         }
-
         if(current != null) {
             // then we know current is pointing to the node after
             // which we add 'newData'
-            SinglyNode newNode = new SinglyNode(newData);
+            ListNode newNode = new ListNode(newData);
             newNode.next = current.next;
             current.next = newNode;
         }
     }
 
+    // Ok
     public void update(String oldData, String newData) {
-        SinglyNode current = head;
+        ListNode current = head;
         while (current != null && !current.data.equals(oldData)) {
             current = current.next;
         }
@@ -68,6 +70,7 @@ public class MyList {
         }
     }
 
+    // Delete
     public void delete(String data) {
         if(head == null) {
             return;
@@ -75,7 +78,7 @@ public class MyList {
         if(head.data.equals(data)) {
             head = head.next;
         }
-        SinglyNode prevNode = head;
+        ListNode prevNode = head;
         while (prevNode.next != null && !prevNode.next.data.equals(data)) {
             prevNode = prevNode.next;
         }
@@ -85,7 +88,7 @@ public class MyList {
     }
 
     public void print() {
-        SinglyNode current = head;
+        ListNode current = head;
         while(current != null){
             System.out.print(current.data + ",");
             current = current.next;
@@ -114,10 +117,8 @@ class SinglyMain {
         list.update("testing123", "testing456");
         list.print();
 
-        MyList list2 = new MyList();
-        list2.insertAfter("foo", "bar");
-        list2.print();
-        list2.update("foo", "bar");
-        list2.print();
+        list.delete("one");
+        list.print();
+
     }
 }
