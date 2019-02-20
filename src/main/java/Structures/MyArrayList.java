@@ -50,9 +50,6 @@ public class MyArrayList<E> {
                 list.add(9);
 
 
-        String s = "Hello";
-
-        s.startsWith()
 
     }
 
