@@ -1,4 +1,4 @@
-package Algorithms.Trees;
+package Algorithms.List;
 
 /*
 
@@ -10,7 +10,7 @@ package Algorithms.Trees;
 
 
 // Simple Java program to find n'th node from end of linked list
-class NthLastNode
+class PrintNthLastNode
 {
     Node head; // head of the list. This all there is.
 
@@ -79,7 +79,7 @@ class NthLastNode
     /*Drier program to test above methods */
     public static void main(String [] args)
     {
-        NthLastNode llist = new NthLastNode();
+        PrintNthLastNode llist = new PrintNthLastNode();
         llist.push(20);
         llist.push(4);
         llist.push(15);
