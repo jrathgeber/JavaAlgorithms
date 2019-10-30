@@ -52,21 +52,21 @@ public class Example {
         counter++;
     }
 
+    // Main
+    public static void main(String ...args) {
+
+        Example bd = new Example();
+        bd.testIt();
+
+    }
+
+
     // Dont return a null stream but an empty one!
     public Stream<String> streamOf(List<String> list) {
         return list == null || list.isEmpty() ? Stream.empty() : list.stream();
     }
 
-    public static void main(String ...args) {
-
-
-        Example bd = new Example();
-
-        bd.testIt();
-
-
-    }
-
+    // The Methods
     private void testIt() {
 
 
