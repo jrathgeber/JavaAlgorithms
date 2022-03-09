@@ -14,20 +14,10 @@ public class Valid {
 
         Valid a = new Valid();
 
-        boolean test1 = a.isPalindrome("aba");
+        boolean test1 = a.isPalindrome("dabad");
         boolean expected1 = true;
         System.out.println(" Out " + test1 );
         assert test1 == expected1 : "Error";
-
-        boolean test2 = a.isPalindrome("cabacd");
-        boolean expected2 = false;
-        System.out.println(" Out " + test2 );
-        assert test2 == expected2 : "Error";
-
-        boolean test3 = a.isPalindrome("dcabacd");
-        boolean expected3 = true;
-        System.out.println(" Out " + test3 );
-        assert test3 == expected3 : "Error";
 
 
     }
