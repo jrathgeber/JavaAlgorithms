@@ -5,6 +5,9 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.io.IOException;
 
+/* May 21st 2023. This is all updated for JDK 20 */
+
+
 public class day1
 {
     public static void main(String[] args) throws IOException
