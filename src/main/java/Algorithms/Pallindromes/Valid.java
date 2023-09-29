@@ -1,9 +1,7 @@
 package Algorithms.Pallindromes;
 /*
     Leet 125. Valid Palindrome
-
     Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
-
     Note: For the purpose of this problem, we define empty string as valid palindrome.
 
  */
@@ -14,11 +12,10 @@ public class Valid {
 
         Valid a = new Valid();
 
-        boolean test1 = a.isPalindrome("dabad");
+        boolean test1 = a.isPalindrome("dabadx");
         boolean expected1 = true;
         System.out.println(" Out " + test1 );
         assert test1 == expected1 : "Error";
-
 
     }
 
@@ -49,11 +46,8 @@ public class Valid {
         System.out.println(snew);
 
         if (isPalindromeString(snew) || snew.equals("")) {
-
             result = true;
-
         } else {
-
             result = false;
         }
 
