@@ -10,6 +10,9 @@ public class FactoryPatternDemo {
 
         shape1.draw();
 
+        Shape shape2 = shapefactory.getShape("Circle");
+
+        shape2.draw();
 
     }
 

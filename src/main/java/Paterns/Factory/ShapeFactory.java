@@ -16,6 +16,10 @@ public class ShapeFactory {
             return new Rectangle();
         }
 
+        if(shapeType == "Circle") {
+            return new Circle();
+        }
+
         return null;
     }
 
