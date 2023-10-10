@@ -5,9 +5,7 @@ import java.util.Scanner;
 
 public class Mortgage {
 
-
     private static final int MONTHS_IN_A_YEAR = 12;
-
 
     public static void main (String...args) {
 

@@ -50,7 +50,7 @@ public class BracketChecker {
   }
 
   public static void main(String[] args) throws IOException {
-    String input = "{Java [Source] (and) {[(Support)]}}}";
+    String input = "{Java [Source] (and) {[(Support)]}}";
     BracketChecker theChecker = new BracketChecker(input);
     theChecker.check(); 
   }

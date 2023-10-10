@@ -61,8 +61,7 @@ public class DemoGraph {
         System.out.println("Vertex 3: " + graph.getVertex("3")); //Vertex 3
          
         //true
-        System.out.println("Algorithms.Graph Contains {1, 2}: " +
-                graph.containsEdge(new Edge(graph.getVertex("1"), graph.getVertex("2"))));
+        System.out.println("Algorithms.Graph Contains {1, 2}: " +  graph.containsEdge(new Edge(graph.getVertex("1"), graph.getVertex("2"))));
          
         //true
         System.out.println(graph.removeEdge(new Edge(graph.getVertex("1"), graph.getVertex("2")))); 

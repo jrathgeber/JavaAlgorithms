@@ -28,7 +28,8 @@ public class Edge implements Comparable<Edge> {
     private Vertex one, two;
     private int weight;
 
-/**
+
+    /**
      * 
      * @param one The first vertex in the Edge
      * @param two The second vertex in the Edge
