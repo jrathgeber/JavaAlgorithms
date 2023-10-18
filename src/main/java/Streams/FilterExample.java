@@ -13,10 +13,11 @@ public class FilterExample {
 
         List<String> names = Arrays.asList("Jason", "Matteo", "Luca", "Fabio") ;
 
-        // The old way
-        // imperitive style
+        // The old way -> imperitive style
         for (String name : names) {
-            // blah
+            if(!name.equals("Jason")) {
+                System.out.println(name);
+            }
         }
 
         // Full functional Predicate style
@@ -32,13 +33,15 @@ public class FilterExample {
             }
         });
 
-
         // Now with Lambda
-        names.stream().filter(name -> !name.equals("JasonR")).forEach(name ->System.out.println(name));
+        names.stream()
+                .filter(name -> !name.equals("JasonR"))
+                .forEach(name ->System.out.println(name));
 
-
-        // Method references
-        names.stream().filter(name -> isJason(name)).forEach(System.out::println);
+        // Method references create filters or pipelines
+        names.stream()
+                .filter(name -> isJason(name))
+                .forEach(System.out::println);
 
 
     }
