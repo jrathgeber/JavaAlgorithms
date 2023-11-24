@@ -22,11 +22,7 @@ public class Closest {
 
     }
 
-
-
-
     public String nearestPalindromic(String n) {
-
 
         return "121";
     }

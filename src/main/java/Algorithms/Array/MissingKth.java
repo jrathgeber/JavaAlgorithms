@@ -5,12 +5,10 @@ import java.util.PriorityQueue;
 
 public class MissingKth {
 
-
     static int findKthLargest1(int[] nums, int k) {
         Arrays.sort(nums);
         return nums[nums.length-k];
     }
-
 
 
     static int findKthLargest2(int[] nums, int k) {
@@ -28,13 +26,12 @@ public class MissingKth {
 
 
 
-
     /* program to test above function */
     public static void main(String args[])
     {
         int a[] = {1,2,4,5,6};
-        int larg = findKthLargest1(a,2);
-        int larg2 = findKthLargest2(a,2);
+        int larg = findKthLargest1(a,1);
+        int larg2 = findKthLargest2(a,1);
         System.out.println("Missing is : [" + larg + "] [" + larg2 + "]");
 
         assert larg == larg2 : " Problem ";

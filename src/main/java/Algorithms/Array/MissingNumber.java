@@ -2,6 +2,11 @@ package Algorithms.Array;
 
 public class MissingNumber {
 
+
+
+
+
+
     // Function to find missing number
     // total of series metho
     static int getMissingNo (int a[], int n)
@@ -51,10 +56,6 @@ public class MissingNumber {
         assert miss == miss2 : " Problem ";
         System.out.println("Test result " + "comming soon");
 
-
-
-
     }
-
 
 }
