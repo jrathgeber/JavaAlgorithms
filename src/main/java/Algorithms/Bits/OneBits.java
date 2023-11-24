@@ -13,8 +13,12 @@ public class OneBits {
 
         int test1 = a.hammingWeight(0000000000000000000010000001011);
         int expected1 = 3;
+
         System.out.println(" Out [" + test1 + "] expected + [" + expected1 + "]" );
         assert test1 == expected1 : "Error";
+
+        System.out.println("Q");
+
     }
 
 
