@@ -50,21 +50,24 @@ each element of array A is an integer within the range [1..1,000,000,000].
  */
 
 
+import java.util.Arrays;
+import java.util.HashSet;
+
 public class PermCheck {
 
 
     public static void main(String[] args) {
 
-        zTemplate sl = new zTemplate();
-        int test1 = sl.solution(1);
-        int test2 = sl.solution(1);
-        int test3 = sl.solution(1);
+        PermCheck sl = new PermCheck();
+        int test1 = sl.solution_jason(new int[]{4,1,3,2});
+        int test2 = sl.solution_jason(new int[]{4,1,3});
+        int test3 = sl.solution_jason(new int[]{1,2,4,5,6});
 
-        int dave1[] = sl.solution(new int[]{2,3,1,5});
-        int dave2[] = sl.solution(new int[]{1,2,4,5,6});
-        int dave3 []= sl.solution(new int[]{1,2,4,5,6});
+        int dave1 = sl.solution_dave(new int[]{4,1,3,2});
+        int dave2 = sl.solution_dave(new int[]{4,1,3});
+        int dave3= sl.solution_dave(new int[]{1,2,4,5,6});
 
-        int expected1 = 5;
+        int expected1 = 1;
         System.out.println(" Out1 [" + test1 + "] expected + [" + expected1 + "] dave + [" + dave1 + "]" );
         assert test1 == expected1 : "Error";
 
@@ -78,19 +81,40 @@ public class PermCheck {
 
     }
 
-    public int solution(int n) {
 
-        return n;
+    public int solution_jason(int[] A) {
+
+        Arrays.sort(A);
+
+        for (int i = 1 ; i < A.length ; i++) {
+
+            if (A[i-1]+1 != A[i] ) {
+                return 0;
+            }
+        }
+
+        return 1;
 
     }
 
+    public int solution_dave(int[] A) {
 
-    public int[] solution(int[] A) {
+        HashSet<Integer> nums  = new HashSet<>();
+        for ( int i = 1; i<=A.length; i++) {
+            nums.add(i);
+        }
 
-        int a[] = {1,2,4,5,11};
+       // System.out.println(nums.toString());
 
-        return a;
+        for ( int a : A ) {
+            if (!nums.contains(Integer.valueOf(a))) {
+                System.out.println(nums.toString() + ":" + a);
 
+                return 0;
+            }
+        }
+
+        return 1;
     }
 
 }
