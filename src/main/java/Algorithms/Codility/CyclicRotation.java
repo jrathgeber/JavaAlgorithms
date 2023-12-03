@@ -56,16 +56,20 @@ public class CyclicRotation {
         int dave2[] = cr.solution_d(new int[]{0,0,0 }, 1);
         int dave3[] = cr.solution_d(new int[]{1,2,3,4}, 1 );
 
+        int yt1[] = cr.solution_yt(new int[]{3,8,9,7,6}, 3 );
+        int yt2[] = cr.solution_yt(new int[]{0,0,0 }, 1);
+        int yt3[] = cr.solution_yt(new int[]{1,2,3,4}, 1 );
+
         int expected1[] = {9, 7, 6, 3, 8};
-        System.out.println(" Out1 [" + Arrays.toString(test1) + "] expected + [" + Arrays.toString(expected1) + "] dave + [" + Arrays.toString(dave1) + "]" );
+        System.out.println(" Out1 [" + Arrays.toString(test1) + "] expected + [" + Arrays.toString(expected1) + "] dave + [" + Arrays.toString(dave1) + "]  yt + [" + Arrays.toString(yt1) + "]" );
         assert test1 == expected1 : "Error";
 
         int expected2[] = {0, 0, 0};
-        System.out.println(" Out2 [" + Arrays.toString(test2) + "] expected + [" + Arrays.toString(expected2) + "] dave + [" + Arrays.toString(dave2) + "]" );
+        System.out.println(" Out2 [" + Arrays.toString(test2) + "] expected + [" + Arrays.toString(expected2) + "] dave + [" + Arrays.toString(dave2) + "]  yt + [" + Arrays.toString(yt2) + "]" );
         assert test2 == expected2 : "Error";
 
         int expected3[] = {1, 2, 3, 4};
-        System.out.println(" Out3 [" + Arrays.toString(test3) + "] expected + [" + Arrays.toString(expected3) + "] dave + [" + Arrays.toString(dave3) + "]" );
+        System.out.println(" Out3 [" + Arrays.toString(test3) + "] expected + [" + Arrays.toString(expected3) + "] dave + [" + Arrays.toString(dave3) + "]  yt + [" + Arrays.toString(yt3) + "]" );
         assert test3 == expected3 : "Error";
 
 
@@ -124,6 +128,29 @@ public class CyclicRotation {
         }
 
         return A;
+    }
+
+    public int[] solution_yt (int[] nums, int k) {
+
+        k = k % nums.length;
+        reverse(nums, 0, nums.length-1);
+        reverse(nums, 0, k-1);
+        reverse(nums, k,  nums.length-1);
+
+        return nums;
+
+    }
+
+    public void reverse (int[] nums, int start, int end) {
+
+        while (start < end) {
+            int temp = nums[start];
+            nums[start] = nums[end];
+            nums[end] = temp;
+            start++;
+            end--;
+
+        }
     }
 
 
