@@ -3,6 +3,8 @@ package Algorithms.Leet;
 import Algorithms.Codility.zTemplate;
 
 import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /*
 Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
@@ -47,21 +49,36 @@ public class ThreeSum {
         List<List<Integer>> test2 = sl.threeSum(new int[]{-1,0,1,2,-1,-4});
         List<List<Integer>> test3 = sl.threeSum(new int[]{-1,0,1,2,-1,-4});
 
-        List<List<Integer>> dave1 = sl.threeSum(new int[]{-1,0,1,2,-1,-4});
-        List<List<Integer>> dave2 = sl.threeSum(new int[]{-1,0,1,2,-1,-4});
-        List<List<Integer>> dave3 = sl.threeSum(new int[]{-1,0,1,2,-1,-4});
+        List<List<Integer>> dave1 = sl.threeSum_nick(new int[]{-1,0,1,2,-1,-4});
+        List<List<Integer>> dave2 = sl.threeSum_nick(new int[]{-1,0,1,2,-1,-4});
+        List<List<Integer>> dave3 = sl.threeSum_nick(new int[]{-1,0,1,2,-1,-4});
+
+
+        ArrayList<Integer> first = new ArrayList<Integer>();
+        first.add(-1);
+        first.add(-1);
+        first.add(2);
+
+        ArrayList<Integer> second
+                = Stream.of(-1, 0, 1)
+                .collect(Collectors.toCollection(
+                        ArrayList::new));
 
         ArrayList<ArrayList<Integer>> expected1 = new ArrayList<ArrayList<Integer>>();
+        expected1.add(first);
+        expected1.add(second);
+
         System.out.println(" Out1 [" + test1 + "] expected + [" + expected1 + "] dave + [" + dave1 + "]" );
-        //assert test1 == expected1 : "Error";
+        assert test1.get(1) == expected1.get(1) : "Error";
 
-        int expected2 = 0;
+        ArrayList<ArrayList<Integer>> expected2 = new ArrayList<>(List.of(first, second));
+
         System.out.println(" Out2 [" + test2 + "] expected + [" + expected2 + "] dave + [" + dave2 + "]" );
-        //assert test2 == expected2 : "Error";
+        assert test1.get(2) == expected1.get(2) : "Error";
 
-        int expected3 = 0;
+        ArrayList<ArrayList<Integer>> expected3 = new ArrayList<>(List.of(first, second));
         System.out.println(" Out3 [" + test3 + "] expected + [" + expected3 + "] dave + [" + dave3 + "]" );
-        //assert test3 == expected3 : "Error";
+        assert test1.get(3) == expected1.get(3) : "Error";
 
     }
 
@@ -86,7 +103,6 @@ public class ThreeSum {
                 if (sum <= 0 && center < right) center++;
                 if (sum >= 0 && center < right) right--;
 
-
             }
         }
 
@@ -94,5 +110,40 @@ public class ThreeSum {
 
     }
 
+    public List<List<Integer>> threeSum_nick(int[] nums) {
+
+        Arrays.sort(nums);
+
+        List<List<Integer>> output_arr = new LinkedList();
+
+        for (int i=0; i<nums.length-2; i++){
+
+            if( i == 0 || (i > 0 && nums[i] != nums[i-1])){
+
+                int low = i+1;
+                int high = nums.length-1;
+                int sum = 0-nums[i];
+
+                while (low < high) {
+                    if(nums[low] + nums[high] ==sum) {
+
+                        output_arr.add(Arrays.asList(nums[i], nums[low], nums[high]));
+                        while(low<high && nums[low] == nums[low+1]) low++;
+                        while(low<high && nums[high] == nums[high-1]) high++;
+                        low++;
+                        high--;
+
+                    } else if(nums[low] + nums[high] < sum) {
+                        high--;
+                    } else {
+                        low++;
+                    }
+                }
+            }
+        }
+
+        return output_arr;
+
+    }
 
 }
