@@ -1,7 +1,5 @@
 package Algorithms.Leet;
 
-import Algorithms.Codility.MaxProductOfThree;
-
 import java.util.Arrays;
 import java.util.HashMap;
 
