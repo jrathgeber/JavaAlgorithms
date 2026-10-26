@@ -52,13 +52,13 @@ public class TwoSum
 
         TwoSum sl = new TwoSum();
 
-        int test1[] = sl.twoSumBrute(new int[]{2,7,11,15}, 26);
-        int test2[] = sl.twoSumBrute(new int[]{3,2,4,}, 6);
-        int test3[] = sl.twoSumBrute(new int[]{3,3}, 6);
+        int[] test1 = sl.twoSumBrute(new int[]{2,7,11,15}, 26);
+        int[] test2 = sl.twoSumBrute(new int[]{3,2,4,}, 6);
+        int[] test3 = sl.twoSumBrute(new int[]{3,3}, 6);
 
-        int dave1[] = sl.twoSumMap(new int[]{2,7,11,15}, 26);
-        int dave2[] = sl.twoSumMap(new int[]{3,2,4,}, 6);
-        int dave3[]=  sl.twoSumMap(new int[]{3,3}, 6);
+        int[] dave1 = sl.twoSumMap(new int[]{2,7,11,15}, 26);
+        int[] dave2 = sl.twoSumMap(new int[]{3,2,4,}, 6);
+        int[] dave3=  sl.twoSumMap(new int[]{3,3}, 6);
 
 
         int[] expected1 = new int[]{1,0};
@@ -96,7 +96,7 @@ public class TwoSum
 
     public  int[] twoSumMap(int[] nums, int target) {
 
-        HashMap <Integer, Integer> twoSum = new HashMap<Integer, Integer>();
+        HashMap <Integer, Integer> twoSum = new HashMap<>();
 
         for (int i=0 ; i < nums.length; i++) {
 
